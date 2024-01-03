@@ -11,18 +11,38 @@ White: #FFFFFF
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     display: flex;
     margin: 0;
 }
 
-.idea-box {
+#idea-box {
     background-color: #1F1F3C;
     color: white;
-    width: 200px;
-    height: 100vh;
-    font-size: 32pt;
+    width: 25vw;
+    height: 99.3vh;
+    font-size: 57pt;
     font-weight: bold;
     text-align: center;
     padding-top: 5px;
+}
+
+#input-ideas {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-grow: 1
+}
+
+#input {
+    background-color: #A8AAD2;
+    height: 50vh;
+    
+}
+
+#ideas {
+    height: 200px;
+    background-color: #EAEAF4;
+    flex-grow: 1;
+    
 }
