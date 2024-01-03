@@ -9,6 +9,20 @@ White: #FFFFFF
 
 * {
     font-family: 'Poppins', sans-serif;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-weight: 400;
+}
+
+body{
+    display: flex;
+    margin: 0;
+}
+
+.idea-box {
+    background-color: #1F1F3C;
+    color: white;
+    width: 200px;
+    height: 100vh;
+    font-size: 32pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
 }
