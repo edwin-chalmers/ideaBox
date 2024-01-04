@@ -37,8 +37,16 @@ body {
 #input {
     background-color: #A8AAD2;
     height: 50vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
     
 }
+
+
 
 #ideas {
     height: 200px;
@@ -46,3 +54,4 @@ body {
     flex-grow: 1;
     
 }
+
