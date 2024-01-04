@@ -34,24 +34,42 @@ body {
     flex-grow: 1
 }
 
-#input {
+.input {
     background-color: #A8AAD2;
     height: 50vh;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: flex-end;
+    align-items: center; 
     justify-content: center;
-    align-items: center;
-    
+   }
+#title{
+    width: 990px;
+    height: 30px;
+    margin-left: 9px;
+    font-size: large;
+    font-weight: 300;
+    border-color:#1F1F3C;
 }
-
-
+#body{
+    width: 990px;
+    height: 90px;
+    font-size: large;
+    font-weight: 300;
+    border-color: #1F1F3C;
+}
+button{
+    background-color: #1F1F3C;
+    color: white;
+    width: 999px;
+    height: 75px;
+    margin-left: 39px;
+    font-size:large;
+    font-weight: 600;
+}
 
 #ideas {
     height: 200px;
     background-color: #EAEAF4;
-    flex-grow: 1;
-    
+    flex-grow: 1;   
 }
 
