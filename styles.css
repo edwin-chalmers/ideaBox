@@ -43,14 +43,14 @@ body {
     justify-content: center;
    }
 #title{
-    width: 955px;
+    width: 953px;
     height: 30px;
     margin-left: 9px;
     border-color:#1F1F3C;
     border-width: thick;
 }
 label{
-    font-size: 16pt;
+    font-size: 16.5pt;
     font-weight: 500;
 }
 #body{
