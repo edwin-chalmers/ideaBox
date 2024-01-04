@@ -13,7 +13,7 @@ White: #FFFFFF
 
 body {
     display: flex;
-    margin: 0;
+    margin: 0;  
 }
 
 #idea-box {
@@ -43,27 +43,29 @@ body {
     justify-content: center;
    }
 #title{
-    width: 990px;
+    width: 955px;
     height: 30px;
     margin-left: 9px;
-    font-size: large;
-    font-weight: 300;
     border-color:#1F1F3C;
+    border-width: thick;
+}
+label{
+    font-size: 16pt;
+    font-weight: 500;
 }
 #body{
-    width: 990px;
+    width: 953px;
     height: 90px;
-    font-size: large;
-    font-weight: 300;
     border-color: #1F1F3C;
+    border-width: thick;
 }
 button{
     background-color: #1F1F3C;
     color: white;
-    width: 999px;
+    width: 967px;
     height: 75px;
-    margin-left: 39px;
-    font-size:large;
+    margin-left: 50px;
+    font-size:xx-large;
     font-weight: 600;
 }
 
