@@ -3,6 +3,7 @@ const titleInput = document.querySelector('#title');
 const bodyInput = document.querySelector('#body')
 const ideasDiv = document.getElementById('ideas')
 
+
 var ideaObjectArray = []
 
 saveButton.addEventListener("click", function () {
@@ -16,7 +17,7 @@ saveButton.addEventListener("click", function () {
     } else {
     saveButton.classList.remove('disabled')
     ideaObjectArray.push(ideaObject)
-    insertCard(titleInput.value, bodyInput.value)
+    insertCard(titleInput.value, bodyInput.value, Date.now())
     clearForm()
     }
 })
@@ -25,15 +26,14 @@ titleInput.addEventListener('input', saveState);
 bodyInput.addEventListener('input', saveState);
 function saveState() {
     if (!titleInput.value || !bodyInput.value) {
-        // saveButton.classList.add('disabled')
     } else {
     saveButton.classList.remove('disabled')
     }
 }
 
-function insertCard(title, body) {
+function insertCard(title, body, id) {
     ideasDiv.insertAdjacentHTML('afterbegin', 
-        `<div class="idea-containers">
+        `<div class="idea-containers" id="${id}">
         <h3>${title}</h3>
         <p> ${body}</p>
         </div>`)
@@ -45,5 +45,18 @@ function clearForm() {
     saveButton.classList.add('disabled')
 }
 
+///// ?????
+ideasDiv.addEventListener("click", function(event) {
+    var targetElement = event.target.closest('.idea-containers')
+    
+    if (targetElement) {
+        var cardID = targetElement.getAttribute('id')
+        // console.log('Card ID:', cardID);
+        deleteCard(cardID)
+    }
+})
 
-
+function deleteCard(id) {
+    var elementToRemove = document.getElementById(`${id}`)
+    elementToRemove.remove()
+}
