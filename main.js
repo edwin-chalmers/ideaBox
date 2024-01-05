@@ -4,14 +4,22 @@ var bodyInput = document.querySelector('#body')
 
 var ideaObjectArray = []
 
+
 saveButton.addEventListener("click", function () {
     var ideaObject = {
-        title: titleInput.id,
-        body: bodyInput.id,
+        title: titleInput.value,
+        body: bodyInput.value,
         id: Date.now()
     }
     ideaObjectArray.push(ideaObject)
 })
+
+// we click the save button
+// the save button takes the value of the title and body and saves them to ideaObjectArray
+
+//when we click the save button
+// 
+
 
 function saveIdea (title,body) {
     var title = titleInput.value
