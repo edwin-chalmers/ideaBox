@@ -1,7 +1,7 @@
-var saveButton = document.querySelector('#saveButton'); 
-var titleInput = document.querySelector('#title');
-var bodyInput = document.querySelector('#body')
-var ideasDiv = document.getElementById('ideas')
+const saveButton = document.querySelector('#saveButton'); 
+const titleInput = document.querySelector('#title');
+const bodyInput = document.querySelector('#body')
+const ideasDiv = document.getElementById('ideas')
 
 var ideaObjectArray = []
 
@@ -12,12 +12,24 @@ saveButton.addEventListener("click", function () {
         id: Date.now()
     }
     if (!titleInput.value || !bodyInput.value) {
-        alert(`Please fill out both forms!`)
+        saveButton.classList.add('disabled')
     } else {
+    saveButton.classList.remove('disabled')
     ideaObjectArray.push(ideaObject)
     insertCard(titleInput.value, bodyInput.value)
+    clearForm()
     }
 })
+
+titleInput.addEventListener('input', saveState);
+bodyInput.addEventListener('input', saveState);
+function saveState() {
+    if (!titleInput.value || !bodyInput.value) {
+        // saveButton.classList.add('disabled')
+    } else {
+    saveButton.classList.remove('disabled')
+    }
+}
 
 function insertCard(title, body) {
     ideasDiv.insertAdjacentHTML('afterbegin', 
@@ -27,19 +39,11 @@ function insertCard(title, body) {
         </div>`)
 }
 
-
-
-
-function saveIdea (title,body) {
-    var title = titleInput.value
-    var body = bodyInput.value 
-    if (title && body){
-        var ideaObject = {
-            title: title,
-            body: body,
-            id: Date.now()
-        }
-        ideaObjectArray.push(ideaObject)
-    }
+function clearForm() {
+    titleInput.value = ''
+    bodyInput.value = ''
+    saveButton.classList.add('disabled')
 }
+
+
 

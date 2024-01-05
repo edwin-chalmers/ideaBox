@@ -98,3 +98,7 @@ button{
     font-size: 16.5pt;
 }
 
+.disabled {
+    background-color: #ddd; /* Lighter color when disabled */
+    cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+}
