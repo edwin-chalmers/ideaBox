@@ -58,6 +58,7 @@ label{
     height: 90px;
     border-color: #1F1F3C;
     border-width: thick;
+
 }
 button{
     background-color: #1F1F3C;
@@ -73,5 +74,27 @@ button{
     height: 200px;
     background-color: #EAEAF4;
     flex-grow: 1;   
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.idea-containers {
+    border-color:#1F1F3C;
+    border-width: thick;
+    border-style: solid;
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    height: 80%;
+    width: 200px;
+    
+    display: flex;
+    flex-direction: column ;
+    text-align: center;
+    justify-content: center;
+    
+    font-size: 16.5pt;
 }
 
