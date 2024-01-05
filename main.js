@@ -12,3 +12,16 @@ saveButton.addEventListener("click", function () {
     }
     ideaObjectArray.push(ideaObject)
 })
+
+function saveIdea (title,body) {
+    var title = titleInput.value
+    var body = bodyInput.value 
+    if (title && body){
+        var ideaObject = {
+            title: title,
+            body: body,
+            id: Date.now()
+        }
+        ideaObjectArray.push(ideaObject)
+    }
+}
