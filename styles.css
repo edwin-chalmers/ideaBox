@@ -85,16 +85,12 @@ button{
     border-width: thick;
     border-style: solid;
     
-    padding-left: 5%;
-    padding-right: 5%;
-    
     height: 80%;
     width: 200px;
     
     display: flex;
     flex-direction: column ;
     text-align: center;
-    justify-content: center;
     
     font-size: 16.5pt;
 
@@ -108,33 +104,27 @@ button{
     top: 0;
     right: 0;
     padding: 0px;
-    width: 25%;
+    width: 66px;
+    padding: 0;
+    margin: -5px;
+
 } 
 
-    
-    
 .purple-box {
     display:flex;
-    justify-content: flex-start;
-    width: 250px;
-    height: 50px;
+    justify-content:space-between;
+    width: 100%;
+    height: 55px;
     background-color: #1F1F3C;
 
 }
 
 .title-body {
-    border: 1px;
-    border-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
     
-    
-    /* justify-content: right;
-    align-items: top;
-    position: absolute;
-    top: 1;
-    right: 1;
-    padding: 5px;
-    width: 15%; */
 
     
 
