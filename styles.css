@@ -80,6 +80,7 @@ button{
 }
 
 .idea-containers {
+    
     border-color:#1F1F3C;
     border-width: thick;
     border-style: solid;
@@ -97,8 +98,47 @@ button{
     
     font-size: 16.5pt;
 
-    
+    position: relative;
+  
 }
+
+.delete-icon {
+    display: flexbox;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+    width: 25%;
+} 
+
+    
+    
+.purple-box {
+    display:flex;
+    justify-content: flex-start;
+    width: 250px;
+    height: 50px;
+    background-color: #1F1F3C;
+
+}
+
+.title-body {
+    border: 1px;
+    border-color: red;
+}
+    
+    
+    /* justify-content: right;
+    align-items: top;
+    position: absolute;
+    top: 1;
+    right: 1;
+    padding: 5px;
+    width: 15%; */
+
+    
+
+
 
 .disabled {
     background-color: #ddd; /* Lighter color when disabled */
