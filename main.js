@@ -5,20 +5,30 @@ var bodyInput = document.querySelector('#body')
 var ideaObjectArray = []
 
 
+// saveButton.addEventListener("click", function () {
+//     var ideaObject = {
+//         title: titleInput.value,
+//         body: bodyInput.value,
+//         id: Date.now()
+//     }
+//     ideaObjectArray.push(ideaObject)
+// })
+
 saveButton.addEventListener("click", function () {
     var ideaObject = {
         title: titleInput.value,
         body: bodyInput.value,
         id: Date.now()
     }
+    if (!titleInput.value || !bodyInput.value) {
+        alert(`Please fill out both forms!`)
+    } else {
     ideaObjectArray.push(ideaObject)
+    }
 })
 
-// we click the save button
-// the save button takes the value of the title and body and saves them to ideaObjectArray
 
-//when we click the save button
-// 
+
 
 
 function saveIdea (title,body) {
@@ -33,3 +43,4 @@ function saveIdea (title,body) {
         ideaObjectArray.push(ideaObject)
     }
 }
+
