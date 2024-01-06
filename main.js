@@ -5,6 +5,7 @@ const ideasDiv = document.getElementById('ideas')
 
 
 var ideaObjectArray = []
+var favObjectArray= []
 
 saveButton.addEventListener("click", function () {
     var ideaObject = {
@@ -57,7 +58,6 @@ ideasDiv.addEventListener("click", function(event) {
     
     if (targetElement) {
         var cardID = targetElement.getAttribute('id')
-        // console.log('Card ID:', cardID);
         deleteCard(cardID)
     }
 })
@@ -66,3 +66,6 @@ function deleteCard(id) {
     var elementToRemove = document.getElementById(`${id}`)
     elementToRemove.remove()
 }
+
+//when the star is clicked it should changed to the hidden orange star
+//element and store it to an array(favObjectArray)
