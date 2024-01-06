@@ -23,7 +23,18 @@
                     <button type="button" id="saveButton" class="disabled">Save</button>
                 </div>
             </form>
-            <div id="ideas"></div>
+            <div id="ideas">
+                <div class="idea-containers" id="${id}">
+                    <div class="purple-box">
+                        <img id="${id}" class="delete-icon" src="./assets/delete.svg" alt="delete-icon">
+                        <img class="star-icon" src="./assets/star.svg" alt="star-icon">
+                    </div> 
+                    <div class="title-body">
+                        <h3>${title}</h3>
+                        <p> ${body}</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </body>
     <script type="text/javascript" src="main.js"></script>
