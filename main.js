@@ -5,13 +5,13 @@ const ideasDiv = document.getElementById('ideas')
 var starIcon = document.querySelector('.star-icon')
 var starActive = document.querySelector('.star-active')
 var ideaObjectArray = []
-var favObjectArray= []
 
 saveButton.addEventListener("click", function () {
     var ideaObject = {
         title: titleInput.value,
         body: bodyInput.value,
-        id: Date.now()
+        id: Date.now(),
+        isFavorite: false
     }
     if (!titleInput.value || !bodyInput.value) {
         saveButton.classList.add('disabled')
@@ -32,16 +32,16 @@ function saveState() {
     }
 }
 
-function insertCard(title, body, id) {
+function insertCard(title, body, id, isFavorite) {
     ideasDiv.insertAdjacentHTML('afterbegin', 
-    `<div class="idea-containers" id="${id}">
+    `<div class="idea-containers" id="${id}" isFavorite="${isFavorite}">
     <div class="purple-box">
         <img id="${id}" class="delete-icon" src="./assets/delete.svg" alt="delete-icon">
         <img id="${id}" class="star-icon" src="./assets/star.svg" alt="star-icon">
     </div> 
     <div class="title-body">
-        <h3>Lorem Ipsum is simply dummy</h3>
-        <p> Lorem Ipsum is simply dummy text of the printing Lorem Ipsu</p>
+        <h3>${title}</h3>
+        <p>${body}</p>
     </div>
     </div>`)
 }
@@ -59,14 +59,42 @@ ideasDiv.addEventListener("click", function(event) {
     if (targetElement) {
         var cardID = targetElement.getAttribute('id')
         deleteCard(cardID)
+        deleteIdeaObjectArray(cardID,)
     }
 })
 
 function deleteCard(id) {
     var elementToRemove = document.getElementById(`${id}`)
     elementToRemove.remove()
-
 }
+
+function deleteIdeaObjectArray(cardID) {
+    for (let i = 0; i < ideaObjectArray.length; i++) {
+        if (ideaObjectArray[i].id == cardID) {
+            ideaObjectArray.splice(i, 1);
+        }
+    }
+}
+
+titleInput.addEventListener('input', function() {
+    var maxLength = this.getAttribute('maxlength');
+    var currentLength = this.value.length;
+    if (currentLength >= maxLength) {
+        titleInput.classList.add('error');
+    } else {
+        titleInput.classList.remove('error');
+    }
+});
+
+bodyInput.addEventListener('input', function() {
+    var maxLength = this.getAttribute('maxlength');
+    var currentLength = this.value.length;
+    if (currentLength >= maxLength) {
+        bodyInput.classList.add('error');
+    } else {
+        bodyInput.classList.remove('error');
+    }
+});
 
 ideasDiv.addEventListener("click", function(event) {
     var targetElement = event.target;
@@ -79,15 +107,28 @@ ideasDiv.addEventListener("click", function(event) {
 
 function favIdea(cardID, starIcon) {
     var currentSrc = starIcon.getAttribute('src');
+    var newSrc, isFavorite;
 
-    var newSrc;
     if (currentSrc === './assets/star.svg') {
         newSrc = './assets/star-active.svg';
+        isFavorite = true;
     } else {
         newSrc = './assets/star.svg';
+        isFavorite = false;
     }
 
     starIcon.setAttribute('src', newSrc);
 
-    // ... rest of your code ...
+    var ideaContainer = document.getElementById(cardID); // Get the parent .idea-containers element
+    ideaContainer.setAttribute('isFavorite', isFavorite); // Update the isFavorite attribute of the ideaContainer
+    favoriteIdeaObjectArray(cardID, isFavorite); // Update the ideaObject in the array
+}
+
+function favoriteIdeaObjectArray(cardID, isFavorite) {
+    // Find the ideaObject in the array and update its isFavorite property
+    ideaObjectArray.forEach(function(idea) {
+        if (idea.id == cardID) {
+            idea.isFavorite = isFavorite;
+        }
+    });
 }
