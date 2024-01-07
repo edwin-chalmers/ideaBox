@@ -33,7 +33,7 @@ function saveState() {
     }
 }
 
-function insertCard(title, body, id, isFavorite) {
+function insertCard(title, body, id,) {
     ideasDiv.insertAdjacentHTML('afterbegin', 
     `<div class="idea-containers" id="${id}" isFavorite="false">
     <div class="purple-box">
@@ -140,15 +140,21 @@ showIdeasButton.addEventListener("click", function() {
         hideCard()
     } else {
         showIdeasButton.innerText = "Show Starred Ideas"
-        // activate Show Starred All function
+        showHiddenCard()
     }
 })
 
 function hideCard() {
     var nonFavoriteDivs = document.querySelectorAll('div[isFavorite="false"]');
-    console.log(nonFavoriteDivs.length); // This should show the number of elements found
     nonFavoriteDivs.forEach(function(div) {
-        console.log(div); // This should log each div to the console
         div.classList.add('hidden');
     });
 }
+
+function showHiddenCard() {
+    var nonFavoriteDivs = document.querySelectorAll('div[isFavorite="false"]');
+    nonFavoriteDivs.forEach(function(div) {
+        div.classList.remove('hidden');
+    });
+}
+
