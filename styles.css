@@ -134,9 +134,9 @@ body {
     justify-content: center;
 }
     
-
-    
-
+.hidden {
+    visibility: hidden !important;
+}
 
 
 .disabled {
