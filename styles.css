@@ -135,6 +135,30 @@ body {
     margin-bottom: 0;
 }
 
+
+.delete-icon {
+    display: flexbox;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+    width: 66px;
+    padding: 0;
+    margin: -5px;
+
+} 
+
+.star-icon {
+    display: flexbox;
+    position:relative;
+    top: 0;
+    right: 0;
+    padding: 0px;
+    width: 66px;
+    padding: 0;
+    margin: -5px;
+}
+
 .purple-box {
     display:flex;
     justify-content:space-between;
