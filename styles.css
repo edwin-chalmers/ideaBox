@@ -1,200 +1,193 @@
-/* 
-Dark Purple: #1F1F3C
-Medium Purple: #A8AAD2
-Light Purple: #EAEAF4
-White: #FFFFFF 
-*/
-
 * {
-    font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;
 }
 
 body {
-    display: flex;
-    margin: 0;  
+display: flex;
+margin: 0;  
 }
 
 #idea-box {
-    background-color: #1F1F3C;
-    color: white;
-    width: 358.5px;
-    height: 99.3vh;
-    flex-shrink: 0;
-    flex-direction: column;
+background-color: #1F1F3C;
+color: white;
+width: 358.5px;
+height: 99.3vh;
+flex-shrink: 0;
+flex-direction: column;
 }
 
-    #idea-box h1 {
-        font-size: 57pt;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 15px;
-    }
+#idea-box h1 {
+font-size: 57pt;
+font-weight: bold;
+text-align: center;
+margin-top: 10px;
+margin-bottom: 15px;
+}
 
-    #show-ideas {
-        background-color: #A8AAD2;
-        color: #1F1F3C;
-        width: 323px;
-        height: 75px;
-        margin-left: 17px;
-        font-size: x-large;
-        font-weight: 600;
-    }
+#show-ideas {
+background-color: #A8AAD2;
+color: #1F1F3C;
+width: 323px;
+height: 75px;
+margin-left: 17px;
+font-size: x-large;
+font-weight: 600;
+}
 
 #input-ideas {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    flex-grow: 1;
-    background-color: #A8AAD2;
+display: flex;
+flex-direction: column;
+height: 100vh;
+flex-grow: 1;
+background-color: #A8AAD2;
 }
 
 .input {
-    background-color: #A8AAD2;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    max-width: 1066.5px;
+background-color: #A8AAD2;
+height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center; 
+justify-content: center;
+max-width: 1066.5px;
 }
-    #title {
-        width: 800px;
-        height: 40px;
-        margin-left: 9px;
-        border-color:#1F1F3C;
-        border-width: thick;
-    }
+#title {
+width: 800px;
+height: 40px;
+margin-left: 9px;
+border-color:#1F1F3C;
+border-width: thick;
+}
 
-    #body {
-        width: 800px;
-        height: 90px;
-        border-color: #1F1F3C;
-        border-width: thick;
-    }
+#body {
+width: 800px;
+height: 90px;
+border-color: #1F1F3C;
+border-width: thick;
+}
 
-    label {
-        font-size: 16.5pt;
-        font-weight: 500;
-        margin-right: 5px;
-    }
+label {
+font-size: 16.5pt;
+font-weight: 500;
+margin-right: 5px;
+}
 
-        .error {
-            border-color: red !important;
-        }
+.error {
+    border-color: red !important;
+}
 
-    #saveButton{
-        background-color: #1F1F3C;
-        color: white;
-        width: 815px;
-        height: 75px;
-        margin-left: 63px;
-        font-size:xx-large;
-        font-weight: 600;
-    }
+#saveButton{
+background-color: #1F1F3C;
+color: white;
+width: 815px;
+height: 75px;
+margin-left: 63px;
+font-size:xx-large;
+font-weight: 600;
+}
 
-        .disabled {
-            background-color: #ddd !important; 
-            cursor: not-allowed; 
-        }
+.disabled {
+    background-color: #ddd !important; 
+    cursor: not-allowed; 
+}
 
 #ideas {
-    height: 200px;
-    background-color: #EAEAF4;
-    flex-grow: 1;   
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+height: 200px;
+background-color: #EAEAF4;
+flex-grow: 1;   
+display: flex;
+justify-content: flex-start;
+align-items: center;
 
-    overflow: auto;
+overflow: auto;
 
 }
 
 .idea-containers {
-    
-    border-color:#1F1F3C;
-    border-width: thick;
-    border-style: solid;
-    
-    height: 80%;
-    width: 270px;
-    
-    display: flex;
-    flex-direction: column ;
-    text-align: center;
-    
-    font-size: 14pt;
 
-    position: relative;
-    margin-left: 35px;
-    margin-right: 35px;
+border-color:#1F1F3C;
+border-width: thick;
+border-style: solid;
+
+height: 80%;
+width: 270px;
+
+display: flex;
+flex-direction: column ;
+text-align: center;
+
+font-size: 14pt;
+
+position: relative;
+margin-left: 35px;
+margin-right: 35px;
 }
 
 .idea-containers h3 {
-    margin-top: 10px;
-    margin-bottom: 0;
+margin-top: 10px;
+margin-bottom: 0;
 }
 
 
 .delete-icon {
-    display: flexbox;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0px;
-    width: 66px;
-    padding: 0;
-    margin: -5px;
+display: flexbox;
+position: absolute;
+top: 0;
+right: 0;
+padding: 0px;
+width: 66px;
+padding: 0;
+margin: -5px;
 
 } 
 
 .star-icon {
-    display: flexbox;
-    position:relative;
-    top: 0;
-    right: 0;
-    padding: 0px;
-    width: 66px;
-    padding: 0;
-    margin: -5px;
+display: flexbox;
+position:relative;
+top: 0;
+right: 0;
+padding: 0px;
+width: 66px;
+padding: 0;
+margin: -5px;
 }
 
 .purple-box {
-    display:flex;
-    justify-content:space-between;
-    width: 100%;
-    height: 55px;
-    background-color: #1F1F3C;
+display:flex;
+justify-content:space-between;
+width: 100%;
+height: 55px;
+background-color: #1F1F3C;
 
 }
-    .delete-icon {
-        display: flexbox;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 0px;
-        width: 66px;
-        padding: 0;
-        margin: -5px;
-    } 
-    .star-icon {
-        display: flexbox;
-        position:relative;
-        top: 0;
-        right: 0;
-        padding: 0px;
-        width: 66px;
-        padding: 0;
-        margin: -5px;
-    }
+.delete-icon {
+display: flexbox;
+position: absolute;
+top: 0;
+right: 0;
+padding: 0px;
+width: 66px;
+padding: 0;
+margin: -5px;
+} 
+.star-icon {
+display: flexbox;
+position:relative;
+top: 0;
+right: 0;
+padding: 0px;
+width: 66px;
+padding: 0;
+margin: -5px;
+}
 
 .title-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 20px;
 }
-    
+
 .hidden {
-    display: none !important;
+display: none !important;
 }
