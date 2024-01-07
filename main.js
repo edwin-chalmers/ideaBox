@@ -64,7 +64,6 @@ ideasDiv.addEventListener("click", function(event) {
 function deleteCard(id) {
     var elementToRemove = document.getElementById(`${id}`)
     elementToRemove.remove()
-}
 
 ideasDiv.addEventListener("click", function(event) {
     var targetElement = event.target.closest('.star-icon')
@@ -89,6 +88,3 @@ function favIdea(cardID) {
         starActive.classList.add('hidden')
     }
 }
-
-
-    

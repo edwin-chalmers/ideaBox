@@ -54,7 +54,7 @@ body {
         border-width: thick;
     }
     label{
-        font-size: 16.5pt;
+        /* font-size: 16.5pt; */
         font-weight: 500;
     }
     #body{
@@ -62,7 +62,6 @@ body {
         height: 90px;
         border-color: #1F1F3C;
         border-width: thick;
-
     }
     button{
         background-color: #1F1F3C;
@@ -72,6 +71,10 @@ body {
         margin-left: 50px;
         font-size:xx-large;
         font-weight: 600;
+    }
+    .error {
+        border-color: red !important;
+
     }
 
 #ideas {
@@ -99,12 +102,16 @@ body {
     flex-direction: column ;
     text-align: center;
     
-    font-size: 16.5pt;
+    font-size: 14pt;
 
     position: relative;
     margin-left: 35px;
     margin-right: 35px;
-  
+}
+
+.idea-containers h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .delete-icon {
@@ -132,6 +139,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
 }
     
 .hidden {
