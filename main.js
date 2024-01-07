@@ -87,5 +87,4 @@ function favIdea(cardID) {
         starIcon.classList.remove('hidden')
         starActive.classList.add('hidden')
     }
-
->>>>>>> 3ed5cb0cf866238a8ac833130cd666788429d1d9
+}
