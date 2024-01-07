@@ -35,7 +35,7 @@ function saveState() {
 
 function insertCard(title, body, id, isFavorite) {
     ideasDiv.insertAdjacentHTML('afterbegin', 
-    `<div class="idea-containers" id="${id}" isFavorite="${isFavorite}">
+    `<div class="idea-containers" id="${id}" isFavorite="false">
     <div class="purple-box">
         <img id="${id}" class="delete-icon" src="./assets/delete.svg" alt="delete-icon">
         <img id="${id}" class="star-icon" src="./assets/star.svg" alt="star-icon">
@@ -137,10 +137,18 @@ function favoriteIdeaObjectArray(cardID, isFavorite) {
 showIdeasButton.addEventListener("click", function() {
     if (showIdeasButton.innerText === "Show Starred Ideas") {
         showIdeasButton.innerText = "Show All Ideas"
-        // activate Show Starred Ideas function
+        hideCard()
     } else {
         showIdeasButton.innerText = "Show Starred Ideas"
         // activate Show Starred All function
     }
 })
 
+function hideCard() {
+    var nonFavoriteDivs = document.querySelectorAll('div[isFavorite="false"]');
+    console.log(nonFavoriteDivs.length); // This should show the number of elements found
+    nonFavoriteDivs.forEach(function(div) {
+        console.log(div); // This should log each div to the console
+        div.classList.add('hidden');
+    });
+}
