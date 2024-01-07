@@ -1,10 +1,10 @@
 const saveButton = document.querySelector('#saveButton'); 
 const titleInput = document.querySelector('#title');
-const bodyInput = document.querySelector('#body')
-const ideasDiv = document.getElementById('ideas')
-const showIdeasButton = document.querySelector('#show-ideas')
-var starIcon = document.querySelector('.star-icon')
-var starActive = document.querySelector('.star-active')
+const bodyInput = document.querySelector('#body');
+const ideasDiv = document.getElementById('ideas');
+const showIdeasButton = document.querySelector('#show-ideas');
+const starIcon = document.querySelector('.star-icon');
+const starActive = document.querySelector('.star-active');
 var ideaObjectArray = []
 
 saveButton.addEventListener("click", function() {
@@ -15,12 +15,12 @@ saveButton.addEventListener("click", function() {
         isFavorite: false
     }
     if (!titleInput.value || !bodyInput.value) {
-        saveButton.classList.add('disabled')
+        saveButton.classList.add('disabled');
     } else {
-    saveButton.classList.remove('disabled')
-    ideaObjectArray.push(ideaObject)
-    insertCard(titleInput.value, bodyInput.value, Date.now())
-    clearForm()
+    saveButton.classList.remove('disabled');
+    ideaObjectArray.push(ideaObject);
+    insertCard(titleInput.value, bodyInput.value, Date.now());
+    clearForm();
     }
 })
 
@@ -29,7 +29,7 @@ bodyInput.addEventListener('input', saveState);
 function saveState() {
     if (!titleInput.value || !bodyInput.value) {
     } else {
-    saveButton.classList.remove('disabled')
+    saveButton.classList.remove('disabled');
     }
 }
 
@@ -44,29 +44,28 @@ function insertCard(title, body, id,) {
         <h3>${title}</h3>
         <p>${body}</p>
     </div>
-    </div>`)
+    </div>`);
 }
 
 function clearForm() {
-    titleInput.value = ''
-    bodyInput.value = ''
-    saveButton.classList.add('disabled')
+    titleInput.value = '';
+    bodyInput.value = '';
+    saveButton.classList.add('disabled');
 }
 
-///// ?????
 ideasDiv.addEventListener("click", function(event) {
-    var targetElement = event.target.closest('.delete-icon')
+    var targetElement = event.target.closest('.delete-icon');
     
     if (targetElement) {
-        var cardID = targetElement.getAttribute('id')
-        deleteCard(cardID)
-        deleteIdeaObjectArray(cardID,)
+        var cardID = targetElement.getAttribute('id');
+        deleteCard(cardID);
+        deleteIdeaObjectArray(cardID,);
     }
 })
 
 function deleteCard(id) {
-    var elementToRemove = document.getElementById(`${id}`)
-    elementToRemove.remove()
+    var elementToRemove = document.getElementById(`${id}`);
+    elementToRemove.remove();
 }
 
 function deleteIdeaObjectArray(cardID) {
@@ -109,6 +108,7 @@ ideasDiv.addEventListener("click", function(event) {
 function favIdea(cardID, starIcon) {
     var currentSrc = starIcon.getAttribute('src');
     var newSrc, isFavorite;
+    var ideaContainer = document.getElementById(cardID);
 
     if (currentSrc === './assets/star.svg') {
         newSrc = './assets/star-active.svg';
@@ -119,14 +119,11 @@ function favIdea(cardID, starIcon) {
     }
 
     starIcon.setAttribute('src', newSrc);
-
-    var ideaContainer = document.getElementById(cardID); // Get the parent .idea-containers element
-    ideaContainer.setAttribute('isFavorite', isFavorite); // Update the isFavorite attribute of the ideaContainer
-    favoriteIdeaObjectArray(cardID, isFavorite); // Update the ideaObject in the array
+    ideaContainer.setAttribute('isFavorite', isFavorite);
+    favoriteIdeaObjectArray(cardID, isFavorite);
 }
 
 function favoriteIdeaObjectArray(cardID, isFavorite) {
-    // Find the ideaObject in the array and update its isFavorite property
     ideaObjectArray.forEach(function(idea) {
         if (idea.id == cardID) {
             idea.isFavorite = isFavorite;
@@ -136,11 +133,11 @@ function favoriteIdeaObjectArray(cardID, isFavorite) {
 
 showIdeasButton.addEventListener("click", function() {
     if (showIdeasButton.innerText === "Show Starred Ideas") {
-        showIdeasButton.innerText = "Show All Ideas"
-        hideCard()
+        showIdeasButton.innerText = "Show All Ideas";
+        hideCard();
     } else {
-        showIdeasButton.innerText = "Show Starred Ideas"
-        showHiddenCard()
+        showIdeasButton.innerText = "Show Starred Ideas";
+        showHiddenCard();
     }
 })
 
@@ -157,4 +154,3 @@ function showHiddenCard() {
         div.classList.remove('hidden');
     });
 }
-
