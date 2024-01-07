@@ -34,14 +34,15 @@ function saveState() {
 
 function insertCard(title, body, id) {
     ideasDiv.insertAdjacentHTML('afterbegin', 
-    `<div class="purple-box">
+    `<div class="idea-containers" id="${id}">
+    <div class="purple-box">
         <img id="${id}" class="delete-icon" src="./assets/delete.svg" alt="delete-icon">
         <img id="${id}" class="star-icon" src="./assets/star.svg" alt="star-icon">
-        <img id="${id}" class="star-active" class="hidden" src="./assets/star-active.svg" alt="star-icon-active">
     </div> 
     <div class="title-body">
-        <h3>${title}</h3>
-        <p> ${body}</p>
+        <h3>Lorem Ipsum is simply dummy</h3>
+        <p> Lorem Ipsum is simply dummy text of the printing Lorem Ipsu</p>
+    </div>
     </div>`)
 }
 
@@ -65,26 +66,28 @@ function deleteCard(id) {
     var elementToRemove = document.getElementById(`${id}`)
     elementToRemove.remove()
 
-ideasDiv.addEventListener("click", function(event) {
-    var targetElement = event.target.closest('.star-icon')
-    
-    if (targetElement) {
-        var cardID = targetElement.getAttribute('id')
-        favIdea(cardID)
-        // favObjectArray.push(cardID)
-        console.log(cardID)
-    }
-})
+}
 
-function favIdea(cardID) {
-    var elementToFavorite = document.getElementById(`${cardID}`)
-    // elementToFavorite.appendChild()
+ideasDiv.addEventListener("click", function(event) {
+    var targetElement = event.target;
     
-    if(starIcon.classList.contains('hidden')) {
-        starIcon.classList.add('hidden')
-        starActive.classList.remove('hidden')
-    } else {
-        starIcon.classList.remove('hidden')
-        starActive.classList.add('hidden')
+    if (targetElement.classList.contains('star-icon')) {
+        var cardID = targetElement.getAttribute('id');
+        favIdea(cardID, targetElement);
     }
+});
+
+function favIdea(cardID, starIcon) {
+    var currentSrc = starIcon.getAttribute('src');
+
+    var newSrc;
+    if (currentSrc === './assets/star.svg') {
+        newSrc = './assets/star-active.svg';
+    } else {
+        newSrc = './assets/star.svg';
+    }
+
+    starIcon.setAttribute('src', newSrc);
+
+    // ... rest of your code ...
 }
