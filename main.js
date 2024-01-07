@@ -11,7 +11,8 @@ saveButton.addEventListener("click", function () {
     var ideaObject = {
         title: titleInput.value,
         body: bodyInput.value,
-        id: Date.now()
+        id: Date.now(),
+        isFavorite: face
     }
     if (!titleInput.value || !bodyInput.value) {
         saveButton.classList.add('disabled')
@@ -65,8 +66,27 @@ ideasDiv.addEventListener("click", function(event) {
 function deleteCard(id) {
     var elementToRemove = document.getElementById(`${id}`)
     elementToRemove.remove()
-
 }
+
+titleInput.addEventListener('input', function() {
+    var maxLength = this.getAttribute('maxlength');
+    var currentLength = this.value.length;
+    if (currentLength >= maxLength) {
+        titleInput.classList.add('error');
+    } else {
+        titleInput.classList.remove('error');
+    }
+});
+
+bodyInput.addEventListener('input', function() {
+    var maxLength = this.getAttribute('maxlength');
+    var currentLength = this.value.length;
+    if (currentLength >= maxLength) {
+        bodyInput.classList.add('error');
+    } else {
+        bodyInput.classList.remove('error');
+    }
+});
 
 ideasDiv.addEventListener("click", function(event) {
     var targetElement = event.target;
