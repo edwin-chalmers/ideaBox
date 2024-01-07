@@ -2,11 +2,12 @@ const saveButton = document.querySelector('#saveButton');
 const titleInput = document.querySelector('#title');
 const bodyInput = document.querySelector('#body')
 const ideasDiv = document.getElementById('ideas')
+const showIdeasButton = document.querySelector('#show-ideas')
 var starIcon = document.querySelector('.star-icon')
 var starActive = document.querySelector('.star-active')
 var ideaObjectArray = []
 
-saveButton.addEventListener("click", function () {
+saveButton.addEventListener("click", function() {
     var ideaObject = {
         title: titleInput.value,
         body: bodyInput.value,
@@ -132,3 +133,14 @@ function favoriteIdeaObjectArray(cardID, isFavorite) {
         }
     });
 }
+
+showIdeasButton.addEventListener("click", function() {
+    if (showIdeasButton.innerText === "Show Starred Ideas") {
+        showIdeasButton.innerText = "Show All Ideas"
+        // activate Show Starred Ideas function
+    } else {
+        showIdeasButton.innerText = "Show Starred Ideas"
+        // activate Show Starred All function
+    }
+})
+
